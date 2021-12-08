@@ -7,4 +7,7 @@ public class TestValidator {
         this.answers = answers;
     }
 
+    public String getAnswers() {
+        return answers;
+    }
 }

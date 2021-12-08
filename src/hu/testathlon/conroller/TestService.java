@@ -19,4 +19,19 @@ public class TestService {
     public int getCompetitorNumber() {
         return testResults.size();
     }
+
+    public String getAnswersById(String id) {
+        return getTestResultById(id).getAnwsers();
+    }
+
+    public String getCorrectAnswer() {
+        return testValidator.getAnswers();
+    }
+
+    private TestResult getTestResultById(String id) {
+        return testResults.stream()
+                .filter(testResult -> testResult.getId().equals(id))
+                .findAny()
+                .get();
+    }
 }
